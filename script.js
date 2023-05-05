@@ -29,16 +29,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
         pressEqual = 1;
         let inpValue = input.value;
-        try {
-            let result = eval(inpValue);
-            if (Number.isInteger(result)) {
-                input.value = result;
-            } else {
-                input.value = result.toFixed(2);
+        const hasPercent = /[%]/.test(inpValue);
+        if (!hasPercent) {
+            try {
+                let result = eval(inpValue);
+                if (Number.isInteger(result)) {
+                    input.value = result;
+                } else {
+                    input.value = result.toFixed(2);
+                }
+            } catch {
+                alert("Invalid!");
+                handleClear();
             }
-        } catch {
-            alert("Invalid!");
-            handleClear();
+        }else{
+            perCent(input.value)
+        }
+    }
+    function perCent(value) {
+        
+        //troca operador % por *.
+        const operatorX = value.replace(/[%]/, "*");
+        //faz a operação de porcentagem
+        const result = eval(operatorX)/100;
+
+        if (Number.isInteger(operatorX)) {
+            input.value = result;
+        } else {
+            input.value = result;
         }
     }
     function handleClear() {
