@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         pressEqual = 1;
         let inpValue = input.value;
+        //verifica se exite caracter "%"
         const hasPercent = /[%]/.test(inpValue);
         if (!hasPercent) {
             try {
@@ -43,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 handleClear();
             }
         }else{
+            //tendo o caracter sera calculado a porcentagem
             perCent(input.value)
         }
     }
@@ -60,9 +62,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     function handleClear() {
+        //limpa a tela 
         input.value = "";
     }
     function handleEraser() {
+        //limpa o ultimo caracter
         input.value = input.value.substring(0, input.value.length - 1);
     }
 })
