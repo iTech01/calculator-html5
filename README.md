@@ -1,12 +1,11 @@
-## Calculator
+# Calculator
+- Calculadora feita com Javascript puro.
 
-### Calculadora feita com Javascript puro.
-
-## Tecnologias usadas:
+### Tecnologias usadas:
 - `HTML`
 - `CSS`
 - `Javascript`
-## Preview:
+### Preview:
 <p>
   <img src="https://i.imgur.com/8eMtdFH.png" alt="calculadora"/>
 </p>
